@@ -25,10 +25,39 @@ function renderFlashcards() {
     cardElement.classList.add("card");
     cardElement.innerHTML = `
     <h3>${card.question}</h3>
-    <p>${card.answer}</p>
-    `
+    <p class="answer hidden">${card.answer}</p>
+    <button class="show-btn">Show Answer</button>
+    `;
+
+    const answer = cardElement.querySelector(".answer");
+    const showButton = cardElement.querySelector(".show-btn");
+
+    // if (showButton.textContent === "Show Answer") {
+    //   showButton.textContent = "Hide Answer";
+    // } else {
+    //   showButton.textContent = "Show Answer";
+    // }
+
+    showButton.addEventListener("click", () => {
+      answer.classList.toggle("hidden");
+    });
+
     cardsContainer.appendChild(cardElement);
   });
 }
 
 renderFlashcards();
+
+form.addEventListener("submit", (event) => {
+  event.preventDefault();
+  const question = questionInput.value;
+  const answer = answerInput.value;
+
+  flashcards.push({
+    question,
+    answer
+  });
+
+  renderFlashcards(); // re-render all cards
+  form.reset();
+});
