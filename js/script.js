@@ -32,6 +32,8 @@ function renderFlashcards() {
     const answer = cardElement.querySelector(".answer");
     const showButton = cardElement.querySelector(".show-btn");
 
+    // console.log(answer.classList.contains("hidden"))
+
     // if (showButton.textContent === "Show Answer") {
     //   showButton.textContent = "Hide Answer";
     // } else {
@@ -40,6 +42,18 @@ function renderFlashcards() {
 
     showButton.addEventListener("click", () => {
       answer.classList.toggle("hidden");
+
+      // Uncomment one of the solutions to test
+
+      // Hope's solution
+      if (showButton.textContent === "Show Answer") {
+        showButton.textContent = "Hide Answer";
+      } else {
+        showButton.textContent = "Show Answer";
+      }
+      
+      // Dennis' Solution
+      // showButton.textContent = answer.classList.contains("hidden") ? "Show Answer" : "Hide Answer";
     });
 
     cardsContainer.appendChild(cardElement);
@@ -48,7 +62,7 @@ function renderFlashcards() {
 
 renderFlashcards();
 
-form.addEventListener("submit", (event) => {
+form.addEventListener("submit", event => {
   event.preventDefault();
   const question = questionInput.value;
   const answer = answerInput.value;
