@@ -3,22 +3,27 @@ const questionInput = document.querySelector("#question");
 const answerInput = document.querySelector("#answer");
 const cardsContainer = document.querySelector("#cards-container");
 
-const flashcards = [
-  {
-    question: "What does HTML stand for?",
-    answer: "HyperText Markup Language"
-  },
-  {
-    question: "What does CSS stand for?",
-    answer: "Cascading Styles Sheets"
-  },
-  {
-    question: "What language makes web pages interactive",
-    answer: "JavaScript"
-  }
-];
+// const flashcards = [
+//   {
+//     question: "What does HTML stand for?",
+//     answer: "HyperText Markup Language"
+//   },
+//   {
+//     question: "What does CSS stand for?",
+//     answer: "Cascading Styles Sheets"
+//   },
+//   {
+//     question: "What language makes web pages interactive",
+//     answer: "JavaScript"
+//   }
+// ];
 
-function renderFlashcards() {
+// get data using fetch
+fetch("http://localhost:3000/flashcards")
+  .then(res => res.json())
+  .then(flashcards => renderFlashcards(flashcards));
+
+function renderFlashcards(flashcards) {
   cardsContainer.innerHTML = "";
   flashcards.forEach((card, index) => {
     const cardElement = document.createElement("div");
@@ -46,21 +51,23 @@ function renderFlashcards() {
       // Uncomment one of the solutions to test
 
       // Hope's solution
-      if (showButton.textContent === "Show Answer") {
-        showButton.textContent = "Hide Answer";
-      } else {
-        showButton.textContent = "Show Answer";
-      }
-      
+      // if (showButton.textContent === "Show Answer") {
+      //   showButton.textContent = "Hide Answer";
+      // } else {
+      //   showButton.textContent = "Show Answer";
+      // }
+
       // Dennis' Solution
-      // showButton.textContent = answer.classList.contains("hidden") ? "Show Answer" : "Hide Answer";
+      showButton.textContent = answer.classList.contains("hidden")
+        ? "Show Answer"
+        : "Hide Answer";
+
+      // condition ? value if true : value if false
     });
 
     cardsContainer.appendChild(cardElement);
   });
 }
-
-renderFlashcards();
 
 form.addEventListener("submit", event => {
   event.preventDefault();

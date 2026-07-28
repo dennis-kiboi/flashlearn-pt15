@@ -1,0 +1,34 @@
+{
+  "flashcards": [
+    {
+      "id": 1,
+      "question": "What does HTML stand for?",
+      "answer": "HyperText Markup Language"
+    },
+    {
+      "id": 2,
+      "question": "What does CSS stand for?",
+      "answer": "Cascading Style Sheets"
+    },
+    {
+      "id": 3,
+      "question": "What language makes web pages interactive?",
+      "answer": "JavaScript"
+    },
+    {
+      "id": 4,
+      "question": "What does API stand for?",
+      "answer": "Application Programming Interface"
+    },
+    {
+      "id": 5,
+      "question": "Which HTTP method is typically used to create new data?",
+      "answer": "POST"
+    },
+    {
+      "question": "What is python",
+      "answer": "A cool programming language",
+      "id": 6
+    }
+  ]
+}
