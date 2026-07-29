@@ -29,6 +29,31 @@
       "question": "What is python",
       "answer": "A cool programming language",
       "id": 6
+    },
+    {
+      "question": "what is www?",
+      "answer": "world wide web",
+      "id": 7
+    },
+    {
+      "question": "what is www?",
+      "answer": "world wide web",
+      "id": 8
+    },
+    {
+      "question": "Binary",
+      "answer": "Representation of value using 0s and 1s",
+      "id": 9
+    },
+    {
+      "question": "dvsdfvsd",
+      "answer": "zxczxc",
+      "id": 10
+    },
+    {
+      "question": "dfgdfgdf",
+      "answer": "dfgsfdd",
+      "id": 11
     }
   ]
 }
